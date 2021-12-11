@@ -3,7 +3,7 @@ import { Grid, Typography, Box, Stack, Container } from '@mui/material';
 import Image from '../components/core/Image';
 import Btn from '../components/core/Btn';
 import AutodeskLogo from '../components/core/AutodeskLogo';
-import background from '../bg-img/commercial-building-wireframe-wide-angle.jpg';
+import background from '../bg-img/commercial-building-wireframe-wide-angle-mini.jpg';
 
 const glassSection = {
     container: {
@@ -39,7 +39,7 @@ const Homepage = ({triggerAction}) => {
                     </Container>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                        <Image src="/assets/images/residential-office-wireframe-clear-background.png" alt="Residential/Office Complex Wireframe" />
+                        <Image src="/assets/images/residential-office-wireframe-clear-background-mini.png" alt="Residential/Office Complex Wireframe" />
                 </Grid>
             </Grid>
             <Container>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, Box, Button } from '@mui/material';
+import { Grid   , Button } from '@mui/material';
 import Input from '../core/Input';
 import withForm from './withForm';
 
@@ -31,7 +31,7 @@ const ContactForm = ({submit}) => {
     }
 
     return (
-        <Box component="form" noValidate autoComplete="off" netlify onSubmit={e => submit(e, values, feedback, submitAction,)}>
+        <form noValidate autoComplete="off" data-netlify="true" onSubmit={e => submit(e, values, feedback, submitAction,)}>
             <Grid container spacing={4}>
                 <Grid item xs={12} md={6}>
                     <Input setValues={setValues} name="Name" />        
@@ -50,7 +50,7 @@ const ContactForm = ({submit}) => {
                     <Button variant="contained" color="secondary" sx={{textTransform: 'capitalize'}} size="large" type="submit">Submit</Button>
                 </Grid>
             </Grid>
-        </Box>
+        </form>
     );
 }
 

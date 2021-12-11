@@ -25,7 +25,7 @@ const FindOutMore = ({triggerAction}) => {
                 </Stack>
             </Box>
             <Stack direction={{xs: 'column', md: 'row'}} sx={{bgcolor: 'primary.main', borderRadius: 2, my: 4, py: {xs: 0, md: 2}, boxShadow: 5}} alignItems="center">
-                <Image src="/assets/images/office-floor-plan.jpg" alt="Office Floor Plan Wireframe" sx={{maxHeight: {xs: 'auto', md: 250}, borderRadius: 2}} />
+                <Image src="/assets/images/office-floor-plan-mini.jpg" alt="Office Floor Plan Wireframe" sx={{maxHeight: {xs: 'auto', md: 250}, borderRadius: 2}} />
                 <Box>
                     <Typography variant="h5" color="common.white" sx={{p: 4}}>Ultimately, this means establishing a platform of compliance that integrates with leading design software to inform consultants of a project's compliance with the National Construction Code.</Typography>
                 </Box>       
