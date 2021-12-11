@@ -1,11 +1,11 @@
 import React from 'react';
-import { Typography, Stack, Box, Grid } from '@mui/material';
+import { Typography, Stack, Box, Grid, Container } from '@mui/material';
 import Image from '../components/core/Image';
 import Btn from '../components/core/Btn';
 
 const FindOutMore = ({triggerAction}) => {
     return (
-        <>
+        <Container>
             <Typography variant="h2" children="BIMCodes overview" />
             <Typography>BIMCodes is a software that introduces National Construction Code compliance assessments for design consultants and Building Certifiers to assist in the concept, schematic & design development phases of a building project.</Typography>
             <Typography>The software, which is configured as an Autodesk Revit Plugin, can be utilised to assess the design of elements of a project (such as distances of walls to boundaries, egress, stairs, sanitary facilities & accessibility) against the provisions of the Australian National Construction Code, outling the compliance status, both within the BIM model & exported data, on the current design.</Typography>
@@ -24,10 +24,13 @@ const FindOutMore = ({triggerAction}) => {
                     <Typography>Ability for consultants to understand compliance impacts of design changes/alterations as they occur concurrently with the project development.</Typography>
                 </Stack>
             </Box>
-            <Box sx={{bgcolor: 'primary.main', borderRadius: 2, my: 6}}>
-                <Typography variant="h5" color="common.white" align="center" sx={{px: 2, py: {xs: 2, md: 4}}}>Ultimately, this means establishing a platform of compliance that integrates with leading design software to inform consultants of a project's compliance with the National Construction Code.</Typography>
-            </Box>
-            <Typography variant="h3" children="How does this apply to further fields?" />
+            <Stack direction={{xs: 'column', md: 'row'}} sx={{bgcolor: 'primary.main', borderRadius: 2, my: 4, py: {xs: 0, md: 2}, boxShadow: 5}} alignItems="center">
+                <Image src="/assets/images/office-floor-plan.jpg" alt="Office Floor Plan Wireframe" sx={{maxHeight: {xs: 'auto', md: 250}, borderRadius: 2}} />
+                <Box>
+                    <Typography variant="h5" color="common.white" sx={{p: 4}}>Ultimately, this means establishing a platform of compliance that integrates with leading design software to inform consultants of a project's compliance with the National Construction Code.</Typography>
+                </Box>       
+            </Stack>
+            <Typography variant="h3" children="How does this apply to further fields?" sx={{my: 6}} />
             <Grid container spacing={2} sx={{my: 4, textAlign: 'center'}}>
                 <Grid item xs={12} md={4}>
                     <Image src="/assets/icons/designer-icon.png" alt="Designer Icon" sx={{maxWidth: 200}} />
@@ -59,7 +62,7 @@ const FindOutMore = ({triggerAction}) => {
             <Stack direction="row" justifyContent="center" sx={{my: 4}}>
                 <Btn children="Sign Up Now" onClick={() => triggerAction()} />
             </Stack>
-        </>
+        </Container>
     );
 }
 

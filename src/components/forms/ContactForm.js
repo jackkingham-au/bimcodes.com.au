@@ -13,23 +13,25 @@ const ContactForm = ({submit}) => {
         },
         phone: {
             value: '',
-            optional: true,
         },
         message: {
             value: '',
         }
     });
 
+    const feedback = {
+        success: 'Your enquiry has been successfully submitted! We will be in contact with your shortly!',
+        error: 'Oh no, there was an error processing your submission! Please try again later.',
+    }
+
     const submitAction = async () => {
-        console.log('Form Submitted');
-        console.log(values)
         return {
             ok: true
         }
     }
 
     return (
-        <Box component="form" noValidate autoComplete="off" onSubmit={e => submit(e, values, submitAction)}>
+        <Box component="form" noValidate autoComplete="off" netlify onSubmit={e => submit(e, values, feedback, submitAction,)}>
             <Grid container spacing={4}>
                 <Grid item xs={12} md={6}>
                     <Input setValues={setValues} name="Name" />        
@@ -39,7 +41,7 @@ const ContactForm = ({submit}) => {
                     <Input setValues={setValues} name="Email" />        
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <Input setValues={setValues} name="Phone" optional />        
+                    <Input setValues={setValues} name="Phone" />        
                 </Grid>
                 <Grid item xs={12}>
                     <Input setValues={setValues} name="Message" label="What can we help you with?" textarea />        

@@ -14,6 +14,22 @@ const EOIForm = ({submit}) => {
         },
     });
 
+    const feedback = {
+        success: 'Congratulations, you\'ve successfully joined the exclsuive list. You\'ll receive exclusive updates and news, on our progress straight to your inbox.',
+        error: 'Oh no, there was an issue signing you up. Please come back and try later.',
+            
+    }
+
+    const errHandler = result => {
+        if(result.ok) return {ok: true, msg: feedback.success};
+        if(result.data.error.response.text.match(/Member Exists/)) return {ok: true, msg: 'You\'ve already signed up to the list!'};
+        // Else Case
+        return {
+            ok: false,
+            msg: feedback.error
+        }
+    }
+
     const submitAction = async () => {
         const response = await fetch('/.netlify/functions/addToMailchimp', {
             method: 'POST',
@@ -28,7 +44,7 @@ const EOIForm = ({submit}) => {
     }
 
     return (
-        <Box component="form" noValidate autoComplete="off" onSubmit={e => submit(e, values, submitAction)}>
+        <Box component="form" noValidate autoComplete="off" onSubmit={e => submit(e, values, feedback, submitAction, errHandler)}>
             <Stack spacing={3}>
                 <Input setValues={setValues} name="Name" />
                 <Input setValues={setValues} name="Email" />

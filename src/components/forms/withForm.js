@@ -8,7 +8,7 @@ const withForm = WrappedComponent => {
         const [error, setError] = useState(false);
         const [loading, setLoading] = useState(false);
 
-        const submit = async (e, values, submitAction) => {
+        const submit = async (e, values, feedback, submitAction, errHandler = false) => {
             e.preventDefault();
             setLoading(true);
             setError(false);
@@ -33,16 +33,29 @@ const withForm = WrappedComponent => {
 
             if(result.length > 0) {
                 setLoading(false);
-                setError('Not all fields are valid. Please  review all entries and try again.');
+                setError('There is an invalid entry in the form fields. Please review the details and try again.');
             } else {
                 const result = await submitAction();
-                if(result.ok) {
-                    setLoading(false);
-                    setSuccess('Your details have successfully been submitted!');
+
+                if(!errHandler) {
+                    if(result.ok) {
+                        setLoading(false);
+                        setSuccess(feedback.success);
+                    } else {
+                        setLoading(false);
+                        setError(feedback.error);
+                        console.error('FORM SUBMISSION ERROR - ', result.data);
+                    }
                 } else {
-                    setLoading(false);
-                    setError('There was an error processing the form. Please try again later.');
-                    console.error('FORM SUBMISSION ERROR - ', result.data);
+                    const outcome = errHandler(result);
+                    if(outcome.ok) {
+                        setLoading(false);
+                        setSuccess(outcome.msg);
+                    } else {
+                        setLoading(false);
+                        setError(outcome.msg);
+                        console.error('CUSTOM FORM HANDLER ERROR - ', outcome.msg);
+                    }
                 }
             }
         }

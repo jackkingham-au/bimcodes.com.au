@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link, Stack, Typography } from '@mui/material';
+import { Link, Stack, Typography, Container } from '@mui/material';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import  ContactForm from '../components/forms/ContactForm';
 
 const Contact = () => {
     return (
-        <>
+        <Container>
             <Typography variant="h2" children="Connect with us" />
             <Stack direction={{xs: 'column', md: 'row'}} spacing={2} sx={{my: 4}}>
                 <Stack direction="row" alignItems="center" spacing={2}>
@@ -19,7 +19,7 @@ const Contact = () => {
                 </Stack>                                
             </Stack>
             <ContactForm />
-        </>
+        </Container>
     );
 }
 
