@@ -2,7 +2,7 @@ const client = require('@mailchimp/mailchimp_marketing');
 
 client.setConfig({
     apiKey: process.env.MAILCHIMP_API_KEY,
-    server: 'us1'
+    server: 'us14'
 });
 
 exports.handler = async (event) => {
@@ -15,7 +15,7 @@ exports.handler = async (event) => {
                 status: "subscribed",
                 merge_fields: {
                     'FNAME': person.name.value.toUpperCase(),
-                }
+                }   
             });
             
             return response;
