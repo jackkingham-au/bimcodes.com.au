@@ -35,7 +35,7 @@ const withForm = WrappedComponent => {
                 setLoading(false);
                 setError('There is an invalid entry in the form fields. Please review the details and try again.');
             } else {
-                const result = await submitAction();
+                const result = await submitAction(e);
 
                 if(!errHandler) {
                     if(result.ok) {

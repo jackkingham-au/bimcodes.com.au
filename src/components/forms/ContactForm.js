@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Grid   , Button } from '@mui/material';
 import Input from '../core/Input';
 import withForm from './withForm';
+import { encode } from '../../helpers/netlify';
 
 const ContactForm = ({submit}) => {
     const [values, setValues] = useState({
@@ -24,7 +25,24 @@ const ContactForm = ({submit}) => {
         error: 'Oh no, there was an error processing your submission! Please try again later.',
     }
 
-    const submitAction = async () => {
+    const submitAction = async event => {
+        const response = await fetch('/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: encode({
+                'form-name': event.target.getAttribute('name'),
+                subject: 'Contact Enquiry',
+                name: values.name.value,
+                email: values.email.value,
+                phone : values.phone.value,
+                message: values.message.value,
+            })
+        });
+
+        console.log(response);
+
         return {
             ok: true
         }
