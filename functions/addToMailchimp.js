@@ -14,7 +14,7 @@ exports.handler = async (event) => {
                 email_address: person.email.value,
                 status: "subscribed",
                 merge_fields: {
-                    'FULLNAME': person.name.value.toUpperCase(),
+                    'FNAME': person.name.value.toUpperCase(),
                 }
             });
             
