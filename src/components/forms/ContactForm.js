@@ -50,6 +50,7 @@ const ContactForm = ({submit}) => {
 
     return (
         <form noValidate name="contact" autoComplete="off" data-netlify="true" netlify onSubmit={e => submit(e, values, feedback, submitAction,)}>
+            <input type="hidden" name="form-name" value="Contact" />
             <Grid container spacing={4}>
                 <Grid item xs={12} md={6}>
                     <Input setValues={setValues} name="Name" />        
