@@ -27,12 +27,10 @@ const ContactForm = ({submit}) => {
 
     const submitAction = async event => {
         const response = await fetch('/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            },
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: encode({
-                'form-name': event.target.getAttribute('name'),
+                'form-name': 'Contact',
                 subject: 'Contact Enquiry',
                 name: values.name.value,
                 email: values.email.value,
@@ -49,7 +47,7 @@ const ContactForm = ({submit}) => {
     }
 
     return (
-        <form noValidate name="contact" autoComplete="off" data-netlify="true" netlify onSubmit={e => submit(e, values, feedback, submitAction,)}>
+        <form noValidate name="Contact" autoComplete="off" data-netlify="true" netlify onSubmit={e => submit(e, values, feedback, submitAction,)}>
             <input type="hidden" name="form-name" value="Contact" />
             <Grid container spacing={4}>
                 <Grid item xs={12} md={6}>
