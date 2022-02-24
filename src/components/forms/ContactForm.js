@@ -21,7 +21,7 @@ const ContactForm = ({submit}) => {
     });
 
     const feedback = {
-        success: 'Your enquiry has been successfully submitted! We will be in contact with your shortly!',
+        success: 'Your enquiry has been successfully submitted! We will be in contact with you shortly!',
         error: 'Oh no, there was an error processing your submission! Please try again later.',
     }
 
