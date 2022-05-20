@@ -27,11 +27,11 @@ const glassSection = {
 const Homepage = ({triggerAction}) => {
     return (
         <>
-            <Grid container alignItems="center" sx={{maxWidth: 2000, margin: '0 auto'}}>
+            <Grid container alignItems="center" sx={{maxWidth: 2000, margin: '0 auto 32px auto'}}>
                 <Grid item xs={12} md={6}>
                     <Container>
                         <Typography sx={{py: 2}} variant="h3" children="Design with compliance, improve your efficiency." />
-                        <Typography sx={{py: 2}}>BIMCodes is an Autodesk Revit Plugin that allows you to assess a building's compliance, using a design that is updated in realtime, to save hassle in conforming with the National Construction Code.</Typography>
+                        <Typography sx={{py: 2}}>BIMCodes is an Autodesk Revit Plugin that allows you to assess Building Information Models (BIM) as they are designed and updated in real time as a guide to ensuring compliance with relevant building codes and standards is achieved.</Typography>
                         <Stack direction={{xs: 'column', md: 'row'}} sx={{my: 2}} alignItems="center" justifyContent="center" spacing={2}>
                             <Btn sx={{height: '', width: {xs: 100/100, md: 'fit-content'}}} onClick={() => triggerAction()}>Sign Up For BIMCodes</Btn>
                             <AutodeskLogo />                    
@@ -42,65 +42,42 @@ const Homepage = ({triggerAction}) => {
                         <Image src="/assets/images/residential-office-wireframe-clear-background-mini.png" alt="Residential/Office Complex Wireframe" />
                 </Grid>
             </Grid>
-            <Container>
-                <Typography variant="h2" children="Productivity at a glance..." align="center" sx={{my: 4}} />
-                <Box sx={{display: {xs: 'block', md: 'flex'}, justifyContent: 'center'}}>
-                    <Image sx={{maxWidth: {xs: 500,md: 400}, mx: 'auto', py: 4, display: 'block'}} src="/assets/cost-vs-time-graph.png" alt="BIMCodes Cost vs Time Graph" />
-                    <Image sx={{maxWidth: {xs: 500,md: 400}, mx: 'auto', py: 4, display: 'block'}} src="/assets/productivity-graph.png" alt="BIMCodes Productivity Graph" />
-                </Box>            
+            <Container>          
                 <Grid container spacing={2} sx={{textAlign: 'center'}}>
                     <Grid item xs={12} md={4}>
                         <Image sx={{maxWidth: 75}} src="/assets/icons/compliance-icon.png" alt="Compliance Icon" />
-                        <Typography variant="h5" children="Improve compliance with BCA" />
-                        <Typography>Ensure you're always conforming with the Building Code of Australia (BCA) to reduce stress and hassle of further logistics.</Typography>
+                        <Typography variant="h5" children="Improve compliance" />
+                        <Typography>Ensure compliance with relevant building codes and standards is achieved during the design process; and as the design progresses.</Typography>
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Image sx={{maxWidth: 75}} src="/assets/icons/export-icon.png" alt="Export Icon" />
-                        <Typography variant="h5" children="Export data to PDF or Excel spreadsheet" />
-                        <Typography>Export your data straight to a PDF or Excel Spreadsheet for quick reference during your consultations and reviews.</Typography>
+                        <Typography variant="h5" children="Export assessment results to PDF or Excel Spreadsheet" />
+                        <Typography>Export your assessment results to a PDF or Excel Spreadsheet for reference during consultations or for records of assessment.</Typography>
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Image sx={{maxWidth: 75}} src="/assets/icons/realtime-icon.png" alt="Realtime Icon" />         
-                        <Typography variant="h5" children="Improve compliance with BCA" />
-                        <Typography>See compliance calculated and justified in realtime, as you make changes to your design.</Typography>
+                        <Typography variant="h5" children="Improve Design & Project Efficiency" />
+                        <Typography>Assess models as they are being designed in real-time; or when making amendments reducing compliance correspondence.</Typography>
                     </Grid>
-                    <Grid item xs={12} md={4}>
-                        <Image sx={{height: 75, width: 'auto'}} src="/assets/icons/geometry-icon.png" alt="Geometry Icon" />
-                        <Typography variant="h5" children="2D to 3D Assessment" />
-                        <Typography>Support for both 2D and 3D designs, meaning you can cover all aspects of your schematic.</Typography>
-                    </Grid>
+                    <Grid xs={0} md={2}></Grid>
                     <Grid item xs={12} md={4}>
                         <Image sx={{maxWidth: 75}} src="/assets/icons/integration-icon.png" alt="Integration Icon" />
-                        <Typography variant="h5" children="Easily integrate with your design" />
-                        <Typography>As an Autodesk plugin, BIMCodes is designed to seamlessly integrate with your current workflow; the tools you already use.</Typography>
+                        <Typography variant="h5" children="Integrates with your design current workflow" />
+                        <Typography>As an Autodesk Revit Plug-in, BIMCodes is designed to integrate with your current workflow and can be utilised at any point in time throughout the design process.</Typography>
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <Image sx={{maxWidth: 75}} src="/assets/icons/all-icon.png" alt="All Aspects Icon" />
-                        <Typography variant="h5" children="Covers all aspects of design" />
-                        <Typography>From floors to walls, to stairs and doors. BIMCodes is designed to cover each aspect of the building schematic.</Typography>
+                        <Typography variant="h5" children="Covers all aspects of Building Information Models" />
+                        <Typography>From small to large models – BIMCodes is designed to assess all scales and aspects of projects.</Typography>
                     </Grid>
                 </Grid>
             </Container>
-            <Grid container spacing={4} sx={{my: 2, ...glassSection.container}}>
-                <Grid item xs={12} md={4}>
-                    <Box sx={{...glassSection.glassEffect, height: 268, p: 2, borderRadius: 2}}>
-                        <Image src="/assets/icons/code-icon.png" alt="Code Icon" sx={{display: 'block', width: 60, mx: 'auto', my: 2}} />
-                        <Typography color="common.white" align="center" children="100k +" variant="h4" />
-                        <Typography color="common.white" align="center" children="Sections of Code" variant="h5" />
-                    </Box>
-                </Grid>
-                <Grid item xs={12} md={4}>
-                    <Box sx={{...glassSection.glassEffect, height: 268, p: 2, borderRadius: 2}}>
-                        <Image src="/assets/icons/clock-icon.png" alt="Clock Icon" sx={{display: 'block', width: 60, mx: 'auto', my: 2}} />
-                        <Typography color="common.white" align="center" children="30%" variant="h4" />
-                        <Typography color="common.white" align="center" children="More Time Saved" variant="h5" />
-                    </Box>
-                </Grid>
-                <Grid item xs={12} md={4}>
+            <Grid container spacing={4} sx={{my: 2, ...glassSection.container, justifyContent: 'center'}}>
+                <Grid item xs={12} md={6}>
                     <Box sx={{...glassSection.glassEffect, height: 268, p: 2, borderRadius: 2}}>
                         <Image src="/assets/icons/correction-icon.png" alt="Correction Icon" sx={{display: 'block', width: 60, mx: 'auto', my: 2}} />
-                        <Typography color="common.white" align="center" children="100%" variant="h4" />
-                        <Typography color="common.white" align="center" children="Continuous Updates to Amendments" variant="h5" />
+                        <Typography color="common.white" align="center" children="2" variant="h4" />
+                        <Typography color="common.white" align="center" children="Current Software Functions Available" variant="h5" />
                     </Box>
                 </Grid>
             </Grid>

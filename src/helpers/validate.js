@@ -1,7 +1,8 @@
 const val = {
     specialChars: /^[a-z'"-\s]+$/gi,
-    email: /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
-    phone: /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g
+    email: /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/i,
+    phone: /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/g,
+    postcode:  /^[0-9]{4}$/,
 }
 
 export const validate = (e, optional = false) => {
@@ -15,5 +16,7 @@ export const validate = (e, optional = false) => {
             return (!e.target.value.trim().match(val.email)) ? 'The email provided is invalid.' : false;
         case 'phone':
             return (!e.target.value.trim().match(val.phone)) ? 'The phone number provided is invalid.' : false;
+        case 'postcode':
+            return (!e.target.value.trim().match(val.phone)) ? 'The postcode provided is invalid. It should be a 4-digit Australian postcode.' : false;
     }
 }
