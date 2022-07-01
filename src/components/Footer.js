@@ -11,10 +11,10 @@ const Footer = ({triggerAction}) => {
                 <AutodeskLogo white />
             </Stack>
             <Stack component="nav" direction={{xs: 'column', md: 'row'}} spacing={4} justifyContent="center" alignItems="center" sx={{my: 4}}>
-                <Link sx={{m: 0}} href="/" children="Home" color="common.white" underline="none" />
-                <Link href="/find-out-more" children="About" color="common.white" underline="none" />
-                <Link href="/contact" children="Contact" color="common.white" underline="none" />
-                <Typography sx={{cursor: 'pointer'}} children="Sign Up" color="common.white" onClick={() => triggerAction()} />
+                <Link sx={{m: 0, fontWeight: 'bold'}} href="/" children="Home" color="common.white" underline="none" />
+                <Link sx={{fontWeight: 'bold'}} href="/find-out-more" children="About" color="common.white" underline="none" />
+                <Link sx={{fontWeight: 'bold'}} href="/contact" children="Contact" color="common.white" underline="none" />
+                <Typography sx={{cursor: 'pointer', fontWeight: 'bold'}} children="Sign Up" color="common.white" onClick={() => triggerAction()} />
             </Stack>
         </Box>
     );

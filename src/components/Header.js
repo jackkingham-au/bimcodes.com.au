@@ -10,7 +10,7 @@ const Header = ({triggerAction}) => {
     return (
         <>
             <Stack direction="row" alignItems="center" sx={{mx: 4, pt: 1}}>
-                <IconButton size="large" color="inherit" onClick={() => openMenu(true)} sx={{display: {xs: 'block', md: 'none'}}}>
+                <IconButton aria-label="Mobile Menu" size="large" color="inherit" onClick={() => openMenu(true)} sx={{display: {xs: 'block', md: 'none'}}}>
                     <MenuIcon />
                 </IconButton>
                 <Link href="/" sx={{textAlign: {xs: 'center', md: 'left'}, flexGrow: {xs: 1, md: 0}, mr: '48px'}}>
